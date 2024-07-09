@@ -11,32 +11,32 @@
 
 ## 3. Grundlegende Spielmechaniken
 ### 3.1 Lebenspunkte-System implementieren
-- [ ] Definiere eine Variable für Lebenspunkte (z.B. `health`) mit einem Startwert von 100
-- [ ] Erstelle eine Funktion `updateHealth(value)`, die die Lebenspunkte aktualisiert
-- [ ] Implementiere eine Funktion `checkHealth()`, die den Gesundheitszustand überprüft und entsprechende Aktionen auslöst (z.B. Game Over bei 0 Lebenspunkten)
-- [ ] Aktualisiere die Anzeige der Lebenspunkte im HTML
+- [x] Definiere eine Variable für Lebenspunkte (z.B. `health`) mit einem Startwert von 100
+- [x] Erstelle eine Funktion `updateHealth(value)`, die die Lebenspunkte aktualisiert
+- [x] Implementiere eine Funktion `checkHealth()`, die den Gesundheitszustand überprüft und entsprechende Aktionen auslöst (z.B. Game Over bei 0 Lebenspunkten)
+- [x] Aktualisiere die Anzeige der Lebenspunkte im HTML
 
 ### 3.2 Hunger-System implementieren
-- [ ] Definiere eine Variable für Hunger (z.B. `hunger`) mit einem Startwert von 0
-- [ ] Erstelle eine Funktion `updateHunger(value)`, die den Hungerwert aktualisiert
-- [ ] Implementiere einen Timer, der den Hunger alle X Sekunden erhöht
-- [ ] Erstelle eine Funktion `feed()`, die den Hunger reduziert und die Lebenspunkte erhöht
-- [ ] Verknüpfe die `feed()`-Funktion mit dem "Füttern"-Button
-- [ ] Aktualisiere die Anzeige des Hungers im HTML
+- [x] Definiere eine Variable für Hunger (z.B. `hunger`) mit einem Startwert von 0
+- [x] Erstelle eine Funktion `updateHunger(value)`, die den Hungerwert aktualisiert
+- [x] Implementiere einen Timer, der den Hunger alle X Sekunden erhöht
+- [x] Erstelle eine Funktion `feed()`, die den Hunger reduziert und die Lebenspunkte erhöht
+- [x] Verknüpfe die `feed()`-Funktion mit dem "Füttern"-Button
+- [x] Aktualisiere die Anzeige des Hungers im HTML
 
 ### 3.3 Energie-System implementieren
-- [ ] Definiere eine Variable für Energie (z.B. `energy`) mit einem Startwert von 100
-- [ ] Erstelle eine Funktion `updateEnergy(value)`, die den Energiewert aktualisiert
-- [ ] Implementiere einen Timer, der die Energie alle X Sekunden reduziert
-- [ ] Erstelle eine Funktion `sleep()`, die die Energie erhöht
-- [ ] Verknüpfe die `sleep()`-Funktion mit dem "Schlafen"-Button
-- [ ] Aktualisiere die Anzeige der Energie im HTML
+- [x] Definiere eine Variable für Energie (z.B. `energy`) mit einem Startwert von 100
+- [x] Erstelle eine Funktion `updateEnergy(value)`, die den Energiewert aktualisiert
+- [x] Implementiere einen Timer, der die Energie alle X Sekunden reduziert
+- [x] Erstelle eine Funktion `sleep()`, die die Energie erhöht
+- [x] Verknüpfe die `sleep()`-Funktion mit dem "Schlafen"-Button
+- [x] Aktualisiere die Anzeige der Energie im HTML
 
 ### 3.4 Alterungsmechanik einführen
-- [ ] Definiere eine Variable für das Alter (z.B. `age`) mit einem Startwert von 0
-- [ ] Implementiere einen Timer, der das Alter alle X Sekunden erhöht
-- [ ] Erstelle eine Funktion `updateAge()`, die das Alter aktualisiert und die Anzeige im HTML aktualisiert
-- [ ] Implementiere Meilensteine für das Alter (z.B. Änderungen im Aussehen oder Verhalten des Tamagotchi)
+- [x] Definiere eine Variable für das Alter (z.B. `age`) mit einem Startwert von 0
+- [x] Implementiere einen Timer, der das Alter alle X Sekunden erhöht
+- [x] Erstelle eine Funktion `updateAge()`, die das Alter aktualisiert und die Anzeige im HTML aktualisiert
+- [x] Implementiere Meilensteine für das Alter (z.B. Änderungen im Aussehen oder Verhalten des Tamagotchi)
 
 ## 4. Benutzeroberfläche verfeinern
 - [ ] Optimiere das Layout für bessere Benutzerfreundlichkeit
