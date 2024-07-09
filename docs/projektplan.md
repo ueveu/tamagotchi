@@ -39,16 +39,16 @@
 - [x] Implementiere Meilensteine für das Alter (z.B. Änderungen im Aussehen oder Verhalten des Tamagotchi)
 
 ## 4. Benutzeroberfläche verfeinern
-- [ ] Optimiere das Layout für bessere Benutzerfreundlichkeit
-- [ ] Füge Hover-Effekte zu Buttons hinzu
-- [ ] Implementiere visuelle Feedback-Effekte für Aktionen (z.B. Blinken beim Füttern)
-- [ ] Erstelle ein Infofeld für Spielermeldungen (z.B. "Dein Tamagotchi ist hungrig!")
+- [x] Optimiere das Layout für bessere Benutzerfreundlichkeit
+- [x] Füge Hover-Effekte zu Buttons hinzu
+- [x] Implementiere visuelle Feedback-Effekte für Aktionen (z.B. Blinken beim Füttern)
+- [x] Erstelle ein Infofeld für Spielermeldungen (z.B. "Dein Tamagotchi ist hungrig!")
 
 ## 5. Interaktionen erweitern
-- [ ] Implementiere eine `play()`-Funktion, die die Zufriedenheit erhöht und Energie verbraucht
-- [ ] Füge verschiedene Spielaktivitäten hinzu (z.B. Ball spielen, Spazieren gehen)
-- [ ] Erstelle eine Funktion zur zufälligen Auswahl von Spielaktivitäten
-- [ ] Implementiere Belohnungen für regelmäßiges Spielen (z.B. Bonus-Lebenspunkte)
+- [x] Implementiere eine `play()`-Funktion, die die Zufriedenheit erhöht und Energie verbraucht
+- [x] Füge verschiedene Spielaktivitäten hinzu (z.B. Ball spielen, Spazieren gehen)
+- [x] Erstelle eine Funktion zur zufälligen Auswahl von Spielaktivitäten
+- [x] Implementiere Belohnungen für regelmäßiges Spielen (z.B. Bonus-Lebenspunkte)
 
 ## 6. Zeitbasierte Ereignisse
 - [ ] Implementiere einen Haupttimer, der regelmäßig den Zustand des Tamagotchi aktualisiert
@@ -83,11 +83,7 @@
 - [ ] Erstelle einen Testplan für alle Spielfunktionen
 - [ ] Führe gründliche Tests aller Spielmechaniken durch
 - [ ] Teste das Spiel auf verschiedenen Geräten und Bildschirmgrößen
-- [ ] Sammle Feedback von Testspielern und implementiere Verbesserungen
 
 ## 12. Dokumentation und Veröffentlichung
 - [ ] Schreibe eine Spielanleitung für Benutzer
 - [ ] Erstelle eine technische Dokumentation des Codes
-- [ ] Optimiere das Spiel für Suchmaschinen (SEO)
-- [ ] Veröffentliche das Spiel auf einer geeigneten Hosting-Plattform
-
