@@ -96,6 +96,63 @@ setInterval(function() {
 document.getElementById('feed-btn').addEventListener('click', feed);
 document.getElementById('sleep-btn').addEventListener('click', sleep);
 
+// Funktion zum Aktualisieren des Infofelds
+function updateInfo(message) {
+    document.getElementById('info-display').textContent = message;
+}
+
+// Funktion für visuelle Feedback-Effekte
+function visualFeedback(action) {
+    const tamagotchi = document.getElementById('tamagotchi-display');
+    tamagotchi.classList.add(action);
+    setTimeout(() => {
+        tamagotchi.classList.remove(action);
+    }, 500);
+}
+
+
+// Aktualisierte Funktionen mit visuellen Effekten und Info-Updates
+function feed() {
+    if (hunger > 0) {
+        updateHunger(-20);
+        updateHealth(5);
+        updateEnergy(-10);
+        visualFeedback('feed');
+        updateInfo('Dein Tamagotchi wurde gefüttert!');
+    } else {
+        updateInfo('Dein Tamagotchi ist nicht hungrig.');
+    }
+}
+
+function sleep() {
+    if (energy < 100) {
+        updateEnergy(30);
+        updateHunger(10);
+        visualFeedback('sleep');
+        updateInfo('Dein Tamagotchi hat geschlafen und Energie getankt!');
+    } else {
+        updateInfo('Dein Tamagotchi ist nicht müde.');
+    }
+}
+
+// Aktualisierte checkHealth Funktion
+function checkHealth() {
+    if (health <= 0) {
+        alert('Game Over! Dein Tamagotchi ist gestorben.');
+        // Hier können wir später eine Funktion zum Neustarten des Spiels aufrufen
+    } else if (health < 30 || energy < 30) {
+        document.getElementById('tamagotchi-display').className = 'tired';
+        updateInfo('Dein Tamagotchi ist müde und braucht Schlaf!');
+    } else if (hunger > 70) {
+        document.getElementById('tamagotchi-display').className = 'hungry';
+        updateInfo('Dein Tamagotchi hat Hunger!');
+    } else {
+        document.getElementById('tamagotchi-display').className = 'happy';
+        updateInfo('Dein Tamagotchi ist glücklich!');
+    }
+}
+
+
 // Initialisierung
 updateHealth(0);  // Setzt die anfängliche Gesundheitsanzeige
 updateHunger(0);  // Setzt die anfängliche Hungeranzeige

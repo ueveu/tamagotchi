@@ -234,3 +234,98 @@ button:hover {
 #tamagotchi-display.tired #mouth {
     d: path('M 70 140 L 130 140');
 }
+
+
+/* Vorhandene Styles bleiben unverändert */
+
+/* Optimiertes Layout */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+#tamagotchi-display {
+    width: 250px;
+    height: 250px;
+    margin: 20px 0;
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#stats div {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Verbesserte Button-Styles mit Hover-Effekten */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Responsive Design-Anpassungen */
+@media (max-width: 480px) {
+    #game-container {
+        padding: 10px;
+    }
+
+    #tamagotchi-display {
+        width: 200px;
+        height: 200px;
+    }
+
+    #stats {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
