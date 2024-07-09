@@ -3,6 +3,8 @@ let health = 100;
 let hunger = 0;
 let energy = 100;
 let age = 0;
+let happiness = 50;
+
 
 // Funktion zum Aktualisieren der Gesundheit
 function updateHealth(value) {
@@ -152,9 +154,83 @@ function checkHealth() {
     }
 }
 
+// Array mit verschiedenen Spielaktivitäten
+const playActivities = ['Ball spielen', 'Spazieren gehen', 'Tanzen', 'Verstecken spielen'];
+
+// Funktion zum Aktualisieren der Zufriedenheit
+function updateHappiness(value) {
+    happiness += value;
+    happiness = Math.max(0, Math.min(100, happiness));
+    document.getElementById('happiness-value').textContent = happiness;
+    checkHealth();
+}
+
+// Funktion zum Spielen
+function play() {
+    if (energy >= 20) {
+        const activity = getRandomActivity();
+        updateEnergy(-20);
+        updateHappiness(15);
+        updateHunger(10);
+        visualFeedback('play');
+        updateInfo(`Dein Tamagotchi hat ${activity} gespielt und ist jetzt glücklicher!`);
+        checkPlayReward();
+    } else {
+        updateInfo('Dein Tamagotchi ist zu müde zum Spielen.');
+    }
+}
+
+// Funktion zur zufälligen Auswahl einer Spielaktivität
+function getRandomActivity() {
+    return playActivities[Math.floor(Math.random() * playActivities.length)];
+}
+
+// Zähler für die Anzahl der Spiele
+let playCount = 0;
+
+// Funktion zur Überprüfung von Spielbelohnungen
+function checkPlayReward() {
+    playCount++;
+    if (playCount % 5 === 0) {  // Belohnung nach jedem 5. Spiel
+        updateHealth(10);
+        updateInfo('Bonus! Dein Tamagotchi erhält 10 zusätzliche Gesundheitspunkte für regelmäßiges Spielen!');
+    }
+}
+
+// Aktualisierte checkHealth Funktion
+function checkHealth() {
+    if (health <= 0) {
+        alert('Game Over! Dein Tamagotchi ist gestorben.');
+        // Hier können wir später eine Funktion zum Neustarten des Spiels aufrufen
+    } else if (health < 30 || energy < 30) {
+        document.getElementById('tamagotchi-display').className = 'tired';
+        updateInfo('Dein Tamagotchi ist müde und braucht Schlaf!');
+    } else if (hunger > 70) {
+        document.getElementById('tamagotchi-display').className = 'hungry';
+        updateInfo('Dein Tamagotchi hat Hunger!');
+    } else if (happiness < 30) {
+        document.getElementById('tamagotchi-display').className = 'sad';
+        updateInfo('Dein Tamagotchi ist traurig und möchte spielen!');
+    } else {
+        document.getElementById('tamagotchi-display').className = 'happy';
+        updateInfo('Dein Tamagotchi ist glücklich!');
+    }
+}
+
+// Event Listener für den Spielen-Button
+document.getElementById('play-btn').addEventListener('click', play);
+
+// Aktualisierter Timer
+setInterval(function() {
+    updateHunger(5);
+    updateEnergy(-5);
+    updateAge();
+    updateHappiness(-2);  // Zufriedenheit sinkt langsam mit der Zeit
+}, 10000);  // Alle 10 Sekunden
 
 // Initialisierung
-updateHealth(0);  // Setzt die anfängliche Gesundheitsanzeige
-updateHunger(0);  // Setzt die anfängliche Hungeranzeige
-updateEnergy(0);  // Setzt die anfängliche Energieanzeige
-updateAge();      // Setzt die anfängliche Altersanzeige
+updateHealth(0);
+updateHunger(0);
+updateEnergy(0);
+updateAge();
+updateHappiness(0);
