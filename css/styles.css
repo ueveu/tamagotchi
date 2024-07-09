@@ -112,3 +112,51 @@ button:hover {
         font-size: 12px;
     }
 }
+
+
+
+#tamagotchi-display svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes happy {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes hungry {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+}
+
+@keyframes tired {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+#tamagotchi-display.happy svg {
+    animation: happy 0.5s ease-in-out infinite;
+}
+
+#tamagotchi-display.hungry svg {
+    animation: hungry 0.5s ease-in-out infinite;
+}
+
+#tamagotchi-display.tired svg {
+    animation: tired 1s ease-in-out infinite;
+}
+
+/* Anpassungen für den Mund in verschiedenen Zuständen */
+#tamagotchi-display.happy #mouth {
+    d: path('M 70 130 Q 100 150 130 130');
+}
+
+#tamagotchi-display.hungry #mouth {
+    d: path('M 70 140 Q 100 120 130 140');
+}
+
+#tamagotchi-display.tired #mouth {
+    d: path('M 70 140 L 130 140');
+}
