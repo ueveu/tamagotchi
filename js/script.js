@@ -41,6 +41,7 @@ function checkHealth() {
     document.getElementById("tamagotchi-display").className = "happy"; // Visuelles Feedback
     updateInfo("Karl Heinz ist glücklich!"); // Info-Update
   }
+  updateMouth(); // Update the mouth based on the current state
 }
 
 // Funktion zum Aktualisieren des Hungers
@@ -163,6 +164,24 @@ function getRandomActivity() {
 function updateInfo(message) {
   document.getElementById("info-display").textContent = message;
 }
+
+function updateMouth() {
+    const tamagotchiDisplay = document.getElementById('tamagotchi-display');
+    const mouth = document.getElementById('mouth');
+
+    if (tamagotchiDisplay.classList.contains('happy')) {
+        mouth.setAttribute('d', 'M 70 130 Q 100 150 130 130');
+    } else if (tamagotchiDisplay.classList.contains('hungry')) {
+        mouth.setAttribute('d', 'M 70 140 Q 100 120 130 140');
+    } else if (tamagotchiDisplay.classList.contains('tired')) {
+        mouth.setAttribute('d', 'M 70 140 L 130 140');
+    }
+}
+
+// Call this function whenever the state changes
+updateMouth();
+
+
 
 // Array mit verschiedenen Spielaktivitäten
 const playActivities = [
