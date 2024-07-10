@@ -108,7 +108,7 @@ function play() {
     updateEnergy(-10);  // Energie reduzieren
     updateHappiness(10); // Zufriedenheit erhöhen
     updateHunger(10);   // Hungergefühl erhöhen
-    updateInfo(`Karl Heinz hat ${activity} gespielt und ist jetzt glücklicher!`); // Info-Update
+    updateInfo(`Karl Heinz ${activity} und ist jetzt glücklicher!`); // Info-Update
   } else {
     updateInfo("Karl Heinz ist zu müde zum Spielen."); // Info-Update, wenn müde
   }
@@ -148,10 +148,10 @@ function updateInfo(message) {
 
 // Array mit verschiedenen Spielaktivitäten
 const playActivities = [
-  "Ball spielen",
-  "Spazieren gehen",
-  "Tanzen",
-  "Verstecken spielen",
+  "hat Ball gespielt",
+  "ist Spazieren gegangen",
+  "hat getanzt",
+  "hat Verstecken gespielt",
 ];
 
 // Event Listener für die Buttons
