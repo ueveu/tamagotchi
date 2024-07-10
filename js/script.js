@@ -5,6 +5,48 @@ let energy = 100; // Energielevel von Karl Heinz
 let happiness = 50; // Zufriedenheit von Karl Heinz
 let age = 0; // Alter von Karl Heinz
 
+// Funktion zum Füttern von Karl Heinz
+function feed() {
+  if (hunger > 0) {
+    // Überprüfen, ob Karl Heinz hungrig ist
+    updateHunger(-20); // Hungergefühl reduzieren
+    updateHealth(5); // Gesundheit erhöhen
+    updateEnergy(-10); // Energie reduzieren
+    updateInfo("Karl Heinz wurde gefüttert!"); // Info-Update
+  } else {
+    updateInfo("Karl Heinz ist nicht hungrig."); // Info-Update, wenn nicht hungrig
+  }
+}
+
+// Funktion zum Schlafen von Karl Heinz
+function sleep() {
+  if (energy < 100) {
+    // Überprüfen, ob Karl Heinz müde ist
+    updateEnergy(20); // Energie erhöhen
+    updateHealth(10); // Gesundheit erhöhen
+    updateHunger(5); // Hungergefühl erhöhen
+    updateHappiness(-5); // Zufriedenheit reduzieren
+    updateInfo("Karl Heinz hat geschlafen und Energie getankt!"); // Info-Update
+  } else {
+    updateInfo("Karl Heinz ist nicht müde."); // Info-Update, wenn nicht müde
+  }
+}
+
+// Funktion zum Spielen mit Karl Heinz
+function play() {
+  if (energy >= 20) {
+    // Überprüfen, ob Karl Heinz genug Energie hat
+    const activity = getRandomActivity(); // Zufällige Aktivität auswählen
+    updateEnergy(-10); // Energie reduzieren
+    updateHappiness(20); // Zufriedenheit erhöhen
+    updateHunger(10); // Hungergefühl erhöhen
+    updateHealth(-5); // Gesundheit erhöhen
+    updateInfo(`Karl Heinz ${activity} und ist jetzt glücklicher!`); // Info-Update
+  } else {
+    updateInfo("Karl Heinz ist zu müde zum Spielen."); // Info-Update, wenn müde
+  }
+}
+
 // Funktion zum Aktualisieren der Gesundheit
 function updateHealth(value) {
   health += value; // Gesundheitswert anpassen
@@ -79,32 +121,6 @@ function updateEnergy(value) {
   checkHealth(); // Gesundheitszustand überprüfen
 }
 
-// Funktion zum Füttern von Karl Heinz
-function feed() {
-  if (hunger > 0) {
-    // Überprüfen, ob Karl Heinz hungrig ist
-    updateHunger(-10); // Hungergefühl reduzieren
-    updateHealth(5); // Gesundheit erhöhen
-    updateEnergy(-10); // Energie reduzieren
-    updateInfo("Karl Heinz wurde gefüttert!"); // Info-Update
-  } else {
-    updateInfo("Karl Heinz ist nicht hungrig."); // Info-Update, wenn nicht hungrig
-  }
-}
-
-// Funktion zum Schlafen von Karl Heinz
-function sleep() {
-  if (energy < 100) {
-    // Überprüfen, ob Karl Heinz müde ist
-    updateEnergy(20); // Energie erhöhen
-    updateHunger(10); // Hungergefühl erhöhen
-    updateHappiness(-5); // Zufriedenheit reduzieren
-    updateInfo("Karl Heinz hat geschlafen und Energie getankt!"); // Info-Update
-  } else {
-    updateInfo("Karl Heinz ist nicht müde."); // Info-Update, wenn nicht müde
-  }
-}
-
 // Funktion zum Aktualisieren der Zufriedenheit
 function updateHappiness(value) {
   happiness += value; // Zufriedenheit anpassen
@@ -119,17 +135,17 @@ function updateHappiness(value) {
   checkHealth(); // Gesundheitszustand überprüfen
 }
 
-// Funktion zum Spielen mit Karl Heinz
-function play() {
-  if (energy >= 20) {
-    // Überprüfen, ob Karl Heinz genug Energie hat
-    const activity = getRandomActivity(); // Zufällige Aktivität auswählen
-    updateEnergy(-10); // Energie reduzieren
-    updateHappiness(10); // Zufriedenheit erhöhen
-    updateHunger(10); // Hungergefühl erhöhen
-    updateInfo(`Karl Heinz ${activity} und ist jetzt glücklicher!`); // Info-Update
-  } else {
-    updateInfo("Karl Heinz ist zu müde zum Spielen."); // Info-Update, wenn müde
+
+function updateMouth() {
+  const tamagotchiDisplay = document.getElementById("tamagotchi-display");
+  const mouth = document.getElementById("mouth");
+
+  if (tamagotchiDisplay.classList.contains("happy")) {
+    mouth.setAttribute("d", "M 70 130 Q 100 150 130 130");
+  } else if (tamagotchiDisplay.classList.contains("hungry")) {
+    mouth.setAttribute("d", "M 70 140 Q 100 120 130 140");
+  } else if (tamagotchiDisplay.classList.contains("tired")) {
+    mouth.setAttribute("d", "M 70 140 L 130 140");
   }
 }
 
@@ -164,24 +180,6 @@ function getRandomActivity() {
 function updateInfo(message) {
   document.getElementById("info-display").textContent = message;
 }
-
-function updateMouth() {
-    const tamagotchiDisplay = document.getElementById('tamagotchi-display');
-    const mouth = document.getElementById('mouth');
-
-    if (tamagotchiDisplay.classList.contains('happy')) {
-        mouth.setAttribute('d', 'M 70 130 Q 100 150 130 130');
-    } else if (tamagotchiDisplay.classList.contains('hungry')) {
-        mouth.setAttribute('d', 'M 70 140 Q 100 120 130 140');
-    } else if (tamagotchiDisplay.classList.contains('tired')) {
-        mouth.setAttribute('d', 'M 70 140 L 130 140');
-    }
-}
-
-// Call this function whenever the state changes
-updateMouth();
-
-
 
 // Array mit verschiedenen Spielaktivitäten
 const playActivities = [
