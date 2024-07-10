@@ -1,3 +1,5 @@
+[Projektplan](docs/projektplan.md)
+
 # Tamagotchi Game
 
 ## Overview
