@@ -9,15 +9,20 @@ let happiness = 50;
 // Funktion zum Aktualisieren der Gesundheit
 function updateHealth(value) {
     health += value;
-    health = Math.max(0, Math.min(100, health));
+    if (health < 0) {
+        health = 0;
+    } else if (health > 100) {
+        health = 100;
+    }
     document.getElementById('health-value').textContent = health;
     checkHealth();
 }
 
+
 // Funktion zum Überprüfen des Gesundheitszustands
 function checkHealth() {
     if (health <= 0) {
-        alert('Game Over! Dein Tamagotchi ist gestorben.');
+        alert('Game Over! Karl Heinz ist gestorben.');
         // Hier können wir später eine Funktion zum Neustarten des Spiels aufrufen
     } else if (health < 30 || energy < 30) {
         document.getElementById('tamagotchi-display').className = 'tired';
@@ -58,15 +63,21 @@ function updateAge() {
 
 // Funktion zum Überprüfen von Altersmeilensteinen
 function checkAgeMilestones() {
-    if (age === 5) {
-        alert('Dein Tamagotchi ist nun ein Teenager!');
+    if (age === 13) {
+        alert('Karl Heinz ist nun ein Teenager!');
         // Hier könnten wir das Aussehen ändern
-    } else if (age === 10) {
-        alert('Dein Tamagotchi ist nun erwachsen!');
+    } else if (age === 18) {
+        alert('Karl Heinz ist nun erwachsen!');
         // Hier könnten wir das Aussehen erneut ändern
-    } else if (age === 15) {
-        alert('Dein Tamagotchi ist nun ein Senior!');
+    } else if (age === 35) {
+        alert('Karl Heinz ist nun in der Midlife-Crisis!');    
+    } else if (age === 50) {
+        alert('Karl Heinz ist nun ein Senior!');
         // Hier könnten wir das Verhalten anpassen (z.B. schnellerer Energieverlust)
+    }
+    else if (age === 70) {
+        alert('Karl Heinz ist nun ein alter!');
+        // Hier können wir das Aussehen zurückfüchen
     }
 }
 
@@ -120,9 +131,9 @@ function feed() {
         updateHealth(5);
         updateEnergy(-10);
         visualFeedback('feed');
-        updateInfo('Dein Tamagotchi wurde gefüttert!');
+        updateInfo('Karl Heinz wurde gefüttert!');
     } else {
-        updateInfo('Dein Tamagotchi ist nicht hungrig.');
+        updateInfo('Karl Heinz ist nicht hungrig.');
     }
 }
 
@@ -131,26 +142,26 @@ function sleep() {
         updateEnergy(30);
         updateHunger(10);
         visualFeedback('sleep');
-        updateInfo('Dein Tamagotchi hat geschlafen und Energie getankt!');
+        updateInfo('Karl Heinz hat geschlafen und Energie getankt!');
     } else {
-        updateInfo('Dein Tamagotchi ist nicht müde.');
+        updateInfo('Karl Heinz ist nicht müde.');
     }
 }
 
 // Aktualisierte checkHealth Funktion
 function checkHealth() {
     if (health <= 0) {
-        alert('Game Over! Dein Tamagotchi ist gestorben.');
+        alert('Game Over! Karl Heinz ist gestorben.');
         // Hier können wir später eine Funktion zum Neustarten des Spiels aufrufen
     } else if (health < 30 || energy < 30) {
         document.getElementById('tamagotchi-display').className = 'tired';
-        updateInfo('Dein Tamagotchi ist müde und braucht Schlaf!');
+        updateInfo('Karl Heinz ist müde und braucht Schlaf!');
     } else if (hunger > 70) {
         document.getElementById('tamagotchi-display').className = 'hungry';
-        updateInfo('Dein Tamagotchi hat Hunger!');
+        updateInfo('Karl Heinz hat Hunger!');
     } else {
         document.getElementById('tamagotchi-display').className = 'happy';
-        updateInfo('Dein Tamagotchi ist glücklich!');
+        updateInfo('Karl Heinz ist glücklich!');
     }
 }
 
@@ -173,10 +184,10 @@ function play() {
         updateHappiness(15);
         updateHunger(10);
         visualFeedback('play');
-        updateInfo(`Dein Tamagotchi hat ${activity} gespielt und ist jetzt glücklicher!`);
+        updateInfo(`Karl Heinz hat ${activity} gespielt und ist jetzt glücklicher!`);
         checkPlayReward();
     } else {
-        updateInfo('Dein Tamagotchi ist zu müde zum Spielen.');
+        updateInfo('Karl Heinz ist zu müde zum Spielen.');
     }
 }
 
@@ -193,27 +204,27 @@ function checkPlayReward() {
     playCount++;
     if (playCount % 5 === 0) {  // Belohnung nach jedem 5. Spiel
         updateHealth(10);
-        updateInfo('Bonus! Dein Tamagotchi erhält 10 zusätzliche Gesundheitspunkte für regelmäßiges Spielen!');
+        updateInfo('Bonus! Karl Heinz erhält 10 zusätzliche Gesundheitspunkte für regelmäßiges Spielen!');
     }
 }
 
 // Aktualisierte checkHealth Funktion
 function checkHealth() {
     if (health <= 0) {
-        alert('Game Over! Dein Tamagotchi ist gestorben.');
+        alert('Game Over! Karl Heinz ist gestorben.');
         // Hier können wir später eine Funktion zum Neustarten des Spiels aufrufen
     } else if (health < 30 || energy < 30) {
         document.getElementById('tamagotchi-display').className = 'tired';
-        updateInfo('Dein Tamagotchi ist müde und braucht Schlaf!');
+        updateInfo('Karl Heinz ist müde und braucht Schlaf!');
     } else if (hunger > 70) {
         document.getElementById('tamagotchi-display').className = 'hungry';
-        updateInfo('Dein Tamagotchi hat Hunger!');
+        updateInfo('Karl Heinz hat Hunger!');
     } else if (happiness < 30) {
         document.getElementById('tamagotchi-display').className = 'sad';
-        updateInfo('Dein Tamagotchi ist traurig und möchte spielen!');
+        updateInfo('Karl Heinz ist traurig und möchte spielen!');
     } else {
         document.getElementById('tamagotchi-display').className = 'happy';
-        updateInfo('Dein Tamagotchi ist glücklich!');
+        updateInfo('Karl Heinz ist glücklich!');
     }
 }
 
