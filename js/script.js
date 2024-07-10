@@ -152,6 +152,11 @@ const playActivities = [
   "ist Spazieren gegangen",
   "hat getanzt",
   "hat Verstecken gespielt",
+  "hat Playstation gespielt",
+  "hat Xbox gespielt",
+  "hat 5 gegen Willy gespielt",
+  "hat sich einen Joint gegönnt",
+  "hat sich eine line Koks gezogen"
 ];
 
 // Event Listener für die Buttons
