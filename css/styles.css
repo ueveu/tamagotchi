@@ -1,58 +1,292 @@
+/* Basic Page Styling */
 body {
+    /* Sets the default font for the entire page */
     font-family: Arial, sans-serif;
+    /* Centers the content both horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Makes the body take up the full viewport height */
     height: 100vh;
+    /* Removes default margins */
     margin: 0;
+    /* Sets a light gray background color */
     background-color: #f0f0f0;
 }
 
+/* Game Container Styling */
 #game-container {
+    /* White background */
     background-color: white;
+    /* Rounded corners */
     border-radius: 10px;
+    /* Adds spacing around the content */
     padding: 20px;
+    /* Creates a subtle shadow */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* Centers text within the container */
     text-align: center;
+    /* Limits the container's width to 90% of the viewport */
     max-width: 90%;
+    /* Sets a fixed width of 400 pixels */
     width: 400px;
 }
 
+/* Heading Styling */
 h1 {
+    /* Dark gray text color */
     color: #333;
+    /* Larger font size */
     font-size: 24px;
 }
 
+/* Tamagotchi Display Styling */
 #tamagotchi-display {
+    /* Sets the size of the Tamagotchi display */
     width: 200px;
     height: 200px;
+    /* Centers the display horizontally */
     margin: 20px auto;
+    /* Adds a light gray border */
     border: 2px solid #ccc;
+    /* Makes the display circular */
     border-radius: 50%;
     /* Placeholder for Tamagotchi image */
     background-color: #eee;
 }
 
+/* Stats Display Styling */
 #stats {
+    /* Arranges stats evenly */
     display: flex;
     justify-content: space-around;
+    /* Adds spacing below */
     margin-bottom: 20px;
+    /* Allows stats to wrap onto multiple lines if needed */
     flex-wrap: wrap;
 }
 
+/* Individual Stat Styling */
 #stats div {
+    /* Makes the text bold */
     font-weight: bold;
+    /* Adds spacing */
     margin: 5px;
+    /* Smaller font size */
     font-size: 14px;
+}
+
+/* Controls Styling */
+#controls {
+    /* Centers the buttons */
+    display: flex;
+    justify-content: center;
+    /* Adds spacing between buttons */
+    gap: 10px;
+    /* Allows buttons to wrap onto multiple lines */
+    flex-wrap: wrap;
+}
+
+/* Button Styling */
+button {
+    /* Adds padding */
+    padding: 10px 20px;
+    /* Larger font size */
+    font-size: 16px;
+    /* Changes the cursor to a pointer when hovering */
+    cursor: pointer;
+    /* Green background */
+    background-color: #4CAF50;
+    /* White text */
+    color: white;
+    /* Removes default border */
+    border: none;
+    /* Rounded corners */
+    border-radius: 5px;
+    /* Smoothly changes the background color on hover */
+    transition: background-color 0.3s;
+    /* Adds spacing */
+    margin: 5px;
+}
+
+/* Button Hover Styling */
+button:hover {
+    /* Darker green background */
+    background-color: #45a049;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 480px) {
+    /* Reduces padding for smaller screens */
+    #game-container {
+        padding: 10px;
+    }
+
+    /* Reduces heading font size */
+    h1 {
+        font-size: 20px;
+    }
+
+    /* Reduces Tamagotchi display size */
+    #tamagotchi-display {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Reduces button padding and font size */
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design for Even Smaller Screens */
+@media (max-width: 320px) {
+    /* Further reduces padding */
+    #game-container {
+        padding: 5px;
+    }
+
+    /* Further reduces heading font size */
+    h1 {
+        font-size: 18px;
+    }
+
+    /* Further reduces Tamagotchi display size */
+    #tamagotchi-display {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Reduces stat font size */
+    #stats div {
+        font-size: 12px;
+    }
+
+    /* Further reduces button padding and font size */
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* SVG Image Styling */
+#tamagotchi-display svg {
+    /* Makes the SVG fill the display area */
+    width: 100%;
+    height: 100%;
+}
+
+/* Animation Keyframes */
+/* Defines the animation for a happy Tamagotchi */
+@keyframes happy {
+    /* Starting and ending position */
+    0%, 100% { transform: translateY(0); }
+    /* Middle position */
+    50% { transform: translateY(-10px); }
+}
+
+/* Defines the animation for a hungry Tamagotchi */
+@keyframes hungry {
+    /* Starting and ending position */
+    0%, 100% { transform: scale(1); }
+    /* Middle position */
+    50% { transform: scale(0.9); }
+}
+
+/* Defines the animation for a tired Tamagotchi */
+@keyframes tired {
+    /* Starting and ending position */
+    0%, 100% { transform: rotate(0); }
+    /* Quarter and three-quarter positions */
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+/* Animation Application */
+/* Applies the happy animation to the Tamagotchi display when it's in the happy state */
+#tamagotchi-display.happy svg {
+    animation: happy 0.5s ease-in-out infinite;
+}
+
+/* Applies the hungry animation to the Tamagotchi display when it's in the hungry state */
+#tamagotchi-display.hungry svg {
+    animation: hungry 0.5s ease-in-out infinite;
+}
+
+/* Applies the tired animation to the Tamagotchi display when it's in the tired state */
+#tamagotchi-display.tired svg {
+    animation: tired 1s ease-in-out infinite;
+}
+
+/* Mouth Styling for Different States */
+/* Styles the mouth of the Tamagotchi when it's happy */
+#tamagotchi-display.happy #mouth {
+    d: path('M 70 130 Q 100 150 130 130');
+}
+
+/* Styles the mouth of the Tamagotchi when it's hungry */
+#tamagotchi-display.hungry #mouth {
+    d: path('M 70 140 Q 100 120 130 140');
+}
+
+/* Styles the mouth of the Tamagotchi when it's tired */
+#tamagotchi-display.tired #mouth {
+    d: path('M 70 140 L 130 140');
+}
+
+
+/* Vorhandene Styles bleiben unverändert */
+
+/* Optimiertes Layout */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+#tamagotchi-display {
+    width: 250px;
+    height: 250px;
+    margin: 20px 0;
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#stats div {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #controls {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
 }
 
+/* Verbesserte Button-Styles mit Hover-Effekten */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -61,54 +295,37 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
-    margin: 5px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Responsive Design-Anpassungen */
 @media (max-width: 480px) {
     #game-container {
         padding: 10px;
     }
 
-    h1 {
-        font-size: 20px;
+    #tamagotchi-display {
+        width: 200px;
+        height: 200px;
     }
 
-    #tamagotchi-display {
-        width: 150px;
-        height: 150px;
+    #stats {
+        grid-template-columns: 1fr;
     }
 
     button {
         padding: 8px 16px;
         font-size: 14px;
-    }
-}
-
-@media (max-width: 320px) {
-    #game-container {
-        padding: 5px;
-    }
-
-    h1 {
-        font-size: 18px;
-    }
-
-    #tamagotchi-display {
-        width: 120px;
-        height: 120px;
-    }
-
-    #stats div {
-        font-size: 12px;
-    }
-
-    button {
-        padding: 6px 12px;
-        font-size: 12px;
     }
 }
