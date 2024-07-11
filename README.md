@@ -4,7 +4,7 @@
 # Tamagotchi Spiel
 
 ## Überblick
-Dieses Projekt ist ein Remake des klassischen Tamagotchi-Spiels, implementiert als Webanwendung mit HTML, CSS und JavaScript. Pflege und erziehe dein virtuelles Haustier, indem du es fütterst, mit ihm spielst und es ruhen lässt.
+Dieses Projekt ist ein Remake des klassischen Tamagotchi-Spiels, implementiert als Webanwendung mit HTML, CSS und JavaScript. Interagiere mit dem virtuellen Haustier, indem du es fütterst, mit ihm spielst und es ruhen lässt.
 
 ## Funktionen
 - Interaktives Tamagotchi-Haustier
