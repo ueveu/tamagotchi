@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamagotchi Spiel</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karl Heinz - das Tamagotchi</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <div id="game-container">
-        <h1>Mein Tamagotchi</h1>
-        <div id="tamagotchi-display">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="80" fill="#FFD700"/>
-                <circle cx="70" cy="80" r="15" fill="white"/>
-                <circle cx="130" cy="80" r="15" fill="white"/>
-                <circle cx="70" cy="80" r="7" fill="black"/>
-                <circle cx="130" cy="80" r="7" fill="black"/>
-                <path id="mouth" d="M 70 130 Q 100 150 130 130" fill="none" stroke="black" stroke-width="5"/>
-            </svg>
+      <h1>Karl Heinz</h1>
+      <div id="tamagotchi-display">
+        <!--  SVG (Scalable Vector Graphics)
+            Das <svg>-Tag definiert einen SVG-Bereich. Der viewBox-Attributwert "0 0 200 200" legt die Koordinaten und die Skalierung des SVG-Bereichs fest. In diesem Fall erstreckt sich der Bereich von 0 bis 200 auf beiden Achsen.  -->
+        <svg viewBox="0 0 200 200">
+          <!-- Das <circle>-Tag erzeugt den Hauptkreis (das Gesicht). cx="100" und cy="100" legen die x- und y-Koordinaten des Kreismittelpunkts fest, sodass der Kreis in der Mitte des SVG-Bereichs liegt. r="80" gibt den Radius des Kreises an. fill="#FFD700" füllt den Kreis mit der Farbe Gelb. -->
+          <circle cx="100" cy="100" r="80" fill="#FFD700" />
+          <!-- weiße Kreise für die Augen -->
+          <circle cx="70" cy="80" r="15" fill="white" />
+          <circle cx="130" cy="80" r="15" fill="white" />
+          <!-- Schwarze Kreise für die Pupillen -->
+          <circle cx="70" cy="80" r="7" fill="black" />
+          <circle cx="130" cy="80" r="7" fill="black" />
+          <!-- Mund:
+                Path erzeugt eine Pfad. stroke="black" legt die Linienfarbe fest, stroke-width="5" legt die Linienbreite fest. -->
+                <!-- siehe: https://www.w3schools.com/graphics/svg_path.asp -->
+          <path
+            id="mouth"
+            d="M 70 130 Q 100 150 130 130"
+            fill="none"
+            stroke="black"
+            stroke-width="5"
+          />
+        </svg>
+      </div>
+      <div id="info-display">Karl Heinz grüßt dich!</div>
+      <div id="stats">
+        <div id="health">Gesundheit: <span id="health-value">100</span></div>
+        <div id="hunger">Hunger: <span id="hunger-value">0</span></div>
+        <div id="energy">Energie: <span id="energy-value">100</span></div>
+        <div id="happiness">
+          Zufriedenheit: <span id="happiness-value">50</span>
         </div>
-        <div id="info-display">Willkommen bei deinem Tamagotchi!</div>
-        <div id="stats">
-            <div id="health">Gesundheit: <span id="health-value">100</span></div>
-            <div id="hunger">Hunger: <span id="hunger-value">0</span></div>
-            <div id="energy">Energie: <span id="energy-value">100</span></div>
-            <div id="happiness">Zufriedenheit: <span id="happiness-value">50</span></div>
-            <div id="age">Alter: <span id="age-value">0</span></div>
-        </div>
-        <div id="controls">
-            <button id="feed-btn">Füttern</button>
-            <button id="play-btn">Spielen</button>
-            <button id="sleep-btn">Schlafen</button>
-        </div>
+        <div id="age">Alter: <span id="age-value">0</span></div>
+      </div>
+      <div id="controls">
+        <button id="feed-btn">Füttern</button>
+        <button id="play-btn">Spielen</button>
+        <button id="sleep-btn">Schlafen</button>
+      </div>
     </div>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

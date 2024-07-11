@@ -219,22 +219,6 @@ button:hover {
     animation: tired 1s ease-in-out infinite;
 }
 
-/* Mouth Styling for Different States */
-/* Styles the mouth of the Tamagotchi when it's happy */
-#tamagotchi-display.happy #mouth {
-    d: path('M 70 130 Q 100 150 130 130');
-}
-
-/* Styles the mouth of the Tamagotchi when it's hungry */
-#tamagotchi-display.hungry #mouth {
-    d: path('M 70 140 Q 100 120 130 140');
-}
-
-/* Styles the mouth of the Tamagotchi when it's tired */
-#tamagotchi-display.tired #mouth {
-    d: path('M 70 140 L 130 140');
-}
-
 
 /* Vorhandene Styles bleiben unverändert */
 
@@ -291,7 +275,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #3678b6;
     color: white;
     border: none;
     border-radius: 5px;
@@ -299,7 +283,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #374c92;
     transform: translateY(-2px);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
