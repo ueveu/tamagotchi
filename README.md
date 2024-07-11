@@ -3,7 +3,7 @@
 # Tamagotchi Game
 
 ## Overview
-This project is a modern remake of the classic Tamagotchi game, implemented as a web application using HTML, CSS, and JavaScript. Nurture and raise your virtual pet by feeding it, playing with it, and letting it rest.
+This project is a remake of the classic Tamagotchi game, implemented as a web application using HTML, CSS, and JavaScript. Nurture and raise your virtual pet by feeding it, playing with it, and letting it rest.
 
 ## Features
 - Interactive Tamagotchi pet
